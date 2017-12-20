@@ -1,6 +1,6 @@
 const Koa = require('koa');
 
-const bodyParser = require('koa-bodyparser');//用来处理Post请求的库
+const bodyParser = require('koa-bodyparser');//用来处理Post请求的库 
 
 const controller = require('./controller');
 
