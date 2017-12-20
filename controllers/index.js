@@ -7,14 +7,18 @@ const index = async (ctx, next) => {
 };
 
 
-//open方法
+//关机---粗暴写法
 const open = async (ctx, next) => {
     cmd.get(
-        // 'Shutdown.exe -s -t 10',//关闭电脑 
+        'Shutdown.exe -s -t 10',//关闭电脑 
         function (data) {
-            console.log("data")
+            ctx.response.body = dd;
         }
     );
+
+
+   
+
 }
 
 
