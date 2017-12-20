@@ -1,6 +1,6 @@
 const Koa = require('koa');
 
-// const bodyParser = require('koa-bodyparser');
+const bodyParser = require('koa-bodyparser');//用来处理Post请求的库
 
 const controller = require('./controller');
 
@@ -28,7 +28,7 @@ if (!isProduction) {
 }
 
 // parse request body:
-// app.use(bodyParser());
+app.use(bodyParser());
 
 // add nunjucks as view:
 app.use(templating('views', {
