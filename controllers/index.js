@@ -9,7 +9,7 @@ const index = async (ctx, next) => {
 
 const open = async (ctx, next) => {
     cmd.get(
-        'Shutdown.exe -s -t 10',
+        // 'Shutdown.exe -s -t 10',//关闭电脑  测试
         function (data) {
             console.log("data")
         }
