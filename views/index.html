@@ -1,21 +1,26 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>Document</title>
 </head>
+
 <body>
-{{ title }}
-<button id="t">打开</button>
-<script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
-<script>
-    $('#t').on('click', function name(params) {
-       $.get('open', function (data) {
-           console.log(111);
-       })
-    });
-</script>
+    {{ title }}
+    <button id="t">打开</button>
+    <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
+    <script>
+        $('#t').on('click', function name(params) {
+            if (confirm('是否关机？')) {
+                $.get('open', function (data) {
+                    console.log(data);
+                })
+            }
+        });
+    </script>
 </body>
+
 </html>
