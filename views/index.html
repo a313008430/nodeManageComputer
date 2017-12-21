@@ -10,15 +10,58 @@
 
 <body>
     {{ title }}
+    <input type="text" id="in">
     <button id="t">打开</button>
+    <code id="co"></code>
     <script src="https://cdn.bootcss.com/zepto/1.2.0/zepto.min.js"></script>
     <script>
+        let ws = new WebSocket('ws://localhost:3333/ws/chat');
+console.log(ws)
+ws.onopen = function (params) {
+    console.log('open')
+}
+ws.onmessage = function (params) {
+ $('#co').html(params.data)
+ console.log(params.data)
+}
+ws.onclose = function (params) {
+     console.log(params);
+ console.log('close');
+}
+ws.onerror = function (params) {
+ console.log(params)
+ console.log('err')
+}
+
         $('#t').on('click', function name(params) {
-            if (confirm('是否关机？')) {
-                $.get('open', function (data) {
-                    console.log(data);
-                })
-            }
+            // if (confirm('是否关机？')) {
+                // $.post('open',{data: $('#in').val()}, function (data) {
+                //     console.log(data);
+                // })
+            // }
+ws.send($('#in').val());
+
+//            let count = 0;
+
+
+// ws.on('open', function () {
+//     console.log(`[CLIENT] open()`);
+//     ws.send('Hello!');
+// });
+
+// ws.on('message', function (message) {
+//     console.log(`[CLIENT] Received: ${message}`);
+//     count++;
+//     if (count > 3) {
+//         ws.send('Goodbye!');
+//         ws.close();
+//     } else {
+//         setTimeout(() => {
+//             ws.send(`Hello, I'm Mr No.${count}!`);
+//         }, 1000);
+//     }
+// });
+
         });
     </script>
 </body>
