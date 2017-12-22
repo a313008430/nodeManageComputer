@@ -22,7 +22,7 @@ ws.onopen = function (params) {
 }
 ws.onmessage = function (params) {
  $('#co').html(params.data)
- console.log(params.data)
+ console.log(params.data)   
 }
 ws.onclose = function (params) {
      console.log(params);

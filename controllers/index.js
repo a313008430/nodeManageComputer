@@ -33,7 +33,7 @@ wss.on('connection', function (ws) {
        ws.on('message', function (message) {
 
         
-           cmd.get(
+           cmd.get( 
                // 'Shutdown.exe -s -t 10',//关闭电脑 
                message,//关闭电脑
                function (err, data, stderr) {
